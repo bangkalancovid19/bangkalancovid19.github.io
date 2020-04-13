@@ -1,0 +1,157 @@
+{
+    "lastupdate": "Tanggal 09 April 2020 Jam : 17:00",
+    "total":{
+        "odr":5314,
+        "odp":223,
+        "pdp":0,
+        "positif":0,
+        "sembuh":0,
+        "meninggal":0
+    },
+    "kecamatan":{
+        "arosbaya": {
+            "odp":6,
+            "odr":172,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "bangkalan": {
+            "odp":2,
+            "odr":59,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "blega": {
+            "odp":34,
+            "odr":826,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "burneh": {
+            "odp":11,
+            "odr":72,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "galis": {
+            "odp":27,
+            "odr":966,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "geger": {
+            "odp":16,
+            "odr":237,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "kamal": {
+            "odp":1,
+            "odr":82,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "klampis": {
+            "odp":8,
+            "odr":135,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "kokop": {
+            "odp":18,
+            "odr":619,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "konang": {
+            "odp":4,
+            "odr":198,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "kwanyar": {
+            "odp":21,
+            "odr":407,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "labang": {
+            "odp":5,
+            "odr":104,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "modung": {
+            "odp":12,
+            "odr":826,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "sepuluh": {
+            "odp":8,
+            "odr":101,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "socah": {
+            "odp":5,
+            "odr":100,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "tanah_merah": {
+            "odp":15,
+            "odr":76,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "tanjung_bumi": {
+            "odp":5,
+            "odr":153,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        },
+        "tragah": {
+            "odp":25,
+            "odr":181,
+            "pdp":0,
+            "positif":0,
+            "sembuh":0,
+            "meninggal":0
+        }
+    }
+}
