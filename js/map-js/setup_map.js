@@ -61,6 +61,9 @@ function setMap(datax) {
               "bangkalan": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                      fill: "#d9534f"
+                  },
                   tooltip: {
                       content: popover("bangkalan")
                   },
@@ -71,6 +74,9 @@ function setMap(datax) {
               "blega": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                      fill: "#d9534f"
+                  },
                   tooltip: {
                       content: popover("blega")
                   },
@@ -121,6 +127,9 @@ function setMap(datax) {
               "klampis": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                      fill: "#d9534f"
+                  },
                   tooltip: {
                       content: popover("klampis")
                   },
