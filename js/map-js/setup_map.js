@@ -23,7 +23,7 @@ function setMap(datax) {
                       cursor: "pointer"
                   },
                   attrsHover: {
-                      fill: "#ede2a5",
+                      fill: "#a1887f",
                       animDuration: 0
                   },
                   text: {

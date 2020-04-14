@@ -4,9 +4,12 @@ fetch("https://madcovid-webhook.herokuapp.com/data")
     document.getElementById("dateUpdate").innerHTML = data.lastupdate;
     document.getElementById("dateUpdate1").innerHTML = data.lastupdate;
     document.getElementById("dateUpdate2").innerHTML = data.lastupdate;
-    document.getElementById("sumber1").href = "https://"+data.resource;
-    document.getElementById("sumber2").href = "https://"+data.resource;
-    document.getElementById("sumber3").href = "https://"+data.resource;
+    // document.getElementById("sumber1").href = "https://"+data.resource;
+    // document.getElementById("sumber2").href = "https://"+data.resource;
+    // document.getElementById("sumber3").href = "https://"+data.resource;
+    document.getElementById("sumber1").innerHTML = data.resource;
+    document.getElementById("sumber2").innerHTML = data.resource;
+    document.getElementById("sumber3").innerHTML = data.resource;
 
     // console.log(data.kecamatan.arosbaya.odp);
     setTableData(data);
