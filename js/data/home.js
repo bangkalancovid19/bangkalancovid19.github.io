@@ -2,12 +2,30 @@ fetch("https://madcovid-webhook.herokuapp.com/data")
   .then((resp) => resp.json())
   .then(function(data) {
     document.getElementById("dateUpdate").innerHTML = data.lastupdate;
-    document.getElementById("sumber").innerHTML = data.resource;
+    document.getElementById("sumber").innerHTML = "Sumber : "+data.resource;
+
+    document.getElementById("odptotal").innerHTML = data.total_detail.odp.jumlah+" Orang";
+    document.getElementById("odpproses").innerHTML = data.total_detail.odp.proses+" Orang";
+    document.getElementById("odpselesai").innerHTML = data.total_detail.odp.selesai+" Orang";
+
+    document.getElementById("pdptotal").innerHTML = data.total_detail.pdp.jumlah+" Orang";
+    document.getElementById("pdpproses").innerHTML = data.total_detail.pdp.proses+" Orang";
+    document.getElementById("pdppselesai").innerHTML = data.total_detail.pdp.selesai+" Orang";
+    document.getElementById("pdpmeninggal").innerHTML = data.total_detail.pdp.meninggal+" Orang";
+
+    document.getElementById("positiftotal").innerHTML = data.total_detail.positif.jumlah+" Orang";
+    document.getElementById("positifproses").innerHTML = data.total_detail.positif.dirawat+" Orang";
+    document.getElementById("positifpselesai").innerHTML = data.total_detail.positif.sembuh+" Orang";
+    document.getElementById("positifmeninggal").innerHTML = data.total_detail.positif.meninggal+" Orang";
+
+
+
     setTableData(data);
-    setChart(data.total);
+    // setChart(data.total);
   });
 
 function setTableData(data) {
+
   var kec = Object.keys(data.kecamatan);
   document.getElementById("odp").innerHTML = "ODP : "+data.total.odp+" Orang";
   document.getElementById("pdp").innerHTML = "PDP : "+data.total.pdp+" Orang";
@@ -16,7 +34,8 @@ function setTableData(data) {
   document.getElementById("meninggal").innerHTML = "MENINGGAL : "+data.total.meninggal+" Orang";
 
   var table = document.createElement('table');
-  table.setAttribute('class', 'table table-hover');
+  table.setAttribute('class', 'table table-sm table-striped table-bordered');
+  table.setAttribute('id', 'example');
 
   var tableHeader = document.createElement("thead");
   table.appendChild(tableHeader);
@@ -45,6 +64,9 @@ function setTableData(data) {
   }
 
   document.getElementById('tabeldata').appendChild(table);
+  $('#example').DataTable( {
+
+  });
 }
 
 function setChart(data) {

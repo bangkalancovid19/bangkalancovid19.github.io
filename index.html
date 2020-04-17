@@ -35,6 +35,7 @@
   <link rel="stylesheet" type="text/css" media="all" href="css/style2.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/padding-margin.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="js/DataTables/datatables.min.css" />
 </head>
 
 <body>
@@ -45,10 +46,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Kanal Informasi Ini Sedang Maintenance</h4>
+            <h4 class="modal-title">Kanal Informasi Ini Adalah Versi Demo</h4>
           </div>
           <div class="modal-body">
-            <p>Kita akan kembali secepatnya. </p>
+            <p>Kita Akan Secepatnya Merilis Kanal Ini, Setelah Kami Menyelesaikan Beberapa Tahap Penyesuaian Dan Kerjasama Terhadapat Beberapa Pihak. Seluruh Konten Dan Data Yang Ada Di Web Ini Merupakan Data Dummy Sementara</p>
           </div>
         </div>
       </div>
@@ -87,7 +88,20 @@
         <!-- MAIN MENU -->
         <nav class="clearfix">
           <ul class="local-scroll">
-
+            <li class=""><a href="index.html" title="Home">Home</a></li>
+            <li class=""><a href="about.html" title="Home">Tentang</a></li>
+            <li>
+              <a href="petadata.html" data-nav-target="" title="Projects">Peta Data</a>
+            </li>
+            <li>
+              <a href="kolaborasi.html" data-nav-target="" title="Services">Kolaborasi</a>
+            </li>
+            <li>
+              <a href="infografik.html" data-nav-target="" title="About">Infografik</a>
+            </li>
+            <li>
+              <a href="kontak.html" data-nav-target="" title="Contact">Kontak</a>
+            </li>
           </ul>
         </nav>
 
@@ -121,13 +135,13 @@
           <div class="container relative">
             <div class="row">
               <div class="col-md-8 col-md-offset-2 relative text-center">
-                <h4 class="heading-hero text-color mb-0 relative">
-                  bangkalancovid19.org
-                </h4>
-                <h4 class="heading-medium fw700 text-color mb-0 relative">
-                  Sedang Dalam Maintenance
-                </h4>
-                <h6 class=""> <b><small class="text-color">Kita Akan Kembali Secepatnya</small></b></h6>
+                <h2 class="heading-big fw700 text-color mb-0 relative">
+                  Covid 19 <span class="newline"> Bangkalan</span>
+                </h2>
+                <h3 class="heading-big-subhead fw400 pt-10 pb-0">
+                  Berkolaborasi Untuk Saling Jaga Sesama, Kanal Informasi Covid19 Wilayah Bangkalan
+                </h3>
+                <h6 class=""> <b><small class="text-color">Bukan Situs Resmi Pemerintahan</small></b></h6>
 
               </div>
             </div>
@@ -167,6 +181,386 @@
 
     </section>
   </section>
+
+  <!-- PROJECTS-->
+  <section data-inpage-section="true" id="projects">
+    <!-- PROJECTS-->
+    <section class="page-section work-section pb-140 pb-sm-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+            <div class="hero-section pt-70">
+              <h6 class="heading-big-subhead text-black fw700 mb-20 mb-sm-20">
+                Dapatkan Live Update Dengan Mad-Covid!
+              </h6>
+              <p>
+                Mad-Covid Adalah Bot yang dibuat untuk dapat membantu kamu mendapatkan informasi seputar Covid19 melalui kanal Whatsapp!
+              </p>
+              <a href="https://api.whatsapp.com/send?phone=6281946337780&text=hai" target="_blank" class="btn btn-color">Hubungi Mad-Covid</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+            <div class="hero-section pt-70">
+              <h6 class="heading-big-subhead text-black fw700 mb-10 mb-sm-10">
+                Data Pesebaran Covid19 Wilayah Bangkalan
+              </h6>
+            </div>
+            Data Diupdate Pada : <span id="dateUpdate" class="label label-danger"></span>
+          </div>
+        </div>
+
+        <div class="row pt-50">
+          <div class="col-md-12">
+            <div class="panel-heading">Tabel Data Pesebaran Covid 19 Bangkalan</div>
+            <div class="panel-body mb-10">
+                <span id="odp" class="label label-info"></span>
+                <span id="pdp" class="label label-warning"></span>
+                <span id="positif" class="label label-danger"></span>
+                <span id="sembuh" class="label label-success"></span>
+                <span id="meninggal" class="label label-default"></span>
+            </div>
+            <div id="tabeldata" class="table-responsive">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="row pt-20">
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-info">
+              <!-- Default panel contents -->
+              <div class="panel-heading">ODP (Orang Dalam Pemantauan)</div>
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">Jumlah Total <span id="odptotal" class="label label-primary" style="float: right;"></span></li>
+                <li class="list-group-item">Dalam Pemantauan <span id="odpproses" class="label label-warning" style="float: right;"></span></li>
+                <li class="list-group-item">Selesai Pemantauan <span id="odpselesai" class="label label-success" style="float: right;"></span></li>
+                <li class="list-group-item">Meninggal <span class="label label-danger" style="float: right;"> 0 Orang</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-warning">
+              <!-- Default panel contents -->
+              <div class="panel-heading">PDP (Pasien Dalam Pengawasan)</div>
+
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">Jumlah Total <span id="pdptotal" class="label label-primary" style="float: right;"></span></li>
+                <li class="list-group-item">Dalam Pengawasan <span id="pdpproses" class="label label-warning" style="float: right;"></span></li>
+                <li class="list-group-item">Selesai Pengawasan <span id="pdppselesai" class="label label-success" style="float: right;"></span></li>
+                <li class="list-group-item">Meninggal <span id="pdpmeninggal" class="label label-danger" style="float: right;"></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-danger">
+              <!-- Default panel contents -->
+              <div class="panel-heading">TERKONFIRMASI POSITIF</div>
+              <li class="list-group-item">Jumlah Total <span id="positiftotal" class="label label-primary" style="float: right;"></span></li>
+              <li class="list-group-item">Dalam Perawatan <span id="positifproses" class="label label-warning" style="float: right;"></span></li>
+              <li class="list-group-item">Sembuh <span id="positifpselesai" class="label label-success" style="float: right;"></span></li>
+              <li class="list-group-item">Meninggal <span id="positifmeninggal" class="label label-danger" style="float: right;"></span></li>
+
+              </ul>
+            </div>
+          </div>
+      </div>
+      <small><a href="petadata.html" > Lihat Data Lebih Detail Disini </a> </small><br>
+      <small><a id="sumber" href="#" > Sumber Referensi Data </a> </small>
+        <!-- Work hero section -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+          <div class="hero-section pt-70">
+            <h6 class="heading-big-subhead text-black fw700 mb-10 mb-sm-10">
+              RSUD Syarifah Ambami Rato Ebu Bangkalan
+            </h6>
+            <h6 class="heading-small text-black fw100 mb-10 mb-sm-10">
+              Fasilitas Kesehatan Yang Menjadi Rujukan Untuk Pasien Covid19 Bangkalan
+              Dan Jumlah Tenaga Medis Yang Tersedia
+            </h6>
+          </div>
+          Data Diupdate Pada : <span id="" class="label label-danger"> Waktu Tidak Valid</span>
+        </div>
+      </div>
+      <div class="row pt-50">
+        <div class="col-xs-12 col-md-3">
+          <a class="thumbnail">
+            <img src="images/syamrabu.jpg" alt="...">
+          </a><br>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Informasi Faskes</h3>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">RSUD Syamrabu Bangkalan</li>
+              <li class="list-group-item">Alamat : Jalan Pemuda Kaffa No 9 Burneh - Bangkalan</li>
+              <li class="list-group-item">Call Center : 031-3095088</li>
+              <li class="list-group-item">Web : rsabangkalan.com</li>
+            </ul>
+            <!-- <div class="panel-footer"></div> -->
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Informasi Ruangan Faskes</h3>
+            </div>
+              <ul>
+                <li class="list-group-item">Isolasi Ventilator<span class="label label-success" style="float: right;">1 Tersedia</span>  <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Isolasi Non - Ventilator<span  class="label label-success" style="float: right;">10 Tersedia</span>  <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Isolasi Biasa: (0/0) <span class="label label-success" style="float: right;">0 Tersedia </span> <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Jumlah Tenaga Medis : <span class="label label-success" style="float: right;">Belum Diketahui</span></li>
+              </ul>
+            <div class="panel-footer"> <a > *Data Belum Sepenuhnya Terintegrasi </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+  </section>
+
+  <!-- SERVICES-->
+  <section data-inpage-section="true" id="services">
+    <!-- SECTION BACKGROUND HERO -->
+    <section class="page-section bg-color overlay-color-90" data-background="images/gallery/image_2.jpg">
+      <div class="container">
+        <div class="page-section pt-70 pb-70 pt-md-0 pb-md-0 pb-sm-0 ">
+          <div class="row">
+
+            <!-- RIGHT SECTION -->
+            <div class="col-md-5">
+              <div class="bg-white relative pt-70 pb-70 pl-50 pr-50 pl-sm-30 pr-sm-30">
+                <h6 class="heading-hero text-color fw700 mt-0 mb-30">
+                  Kenali Gejala Awal Covid19
+                </h6>
+                <p class="mb-30">
+                  Jangan Panik, Kenali gejalanya dan deteksi virus corona sejak dini. Hanya perlu mengatur jarak, hindari bersalaman dan bila sakit memakai masker, dan jaga kebersihan
+                  <br>
+                  <a href="infografik.html">
+                    Lihat Infografik Tentang Gejala Covid19
+                  </a>
+                </p>
+                <div class="owl-slider-2-control">
+                  <div class="owl-slider-2-left page-link page-link--left">
+                  </div>
+
+                  <div class="owl-slider-2-right page-link page-link--right">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LEFT SLIDER SECTION -->
+            <div class="col-md-7">
+              <!-- SLIDER -->
+              <div id="slick-slider3" class="owl-slider-2 pt-70 pt-md-60 pb-md-60 pl-30 pr-30 pr-sm-30">
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">1</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      1. Demam
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Demam menunjukkan gejala awal corona, demam biasanya mencapai suhu 38 derajat celcius keatas
+                    </p>
+                  </div>
+                </div>
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">2</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      2. Batuk Kering
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Batuk Kering tidak beriak dan berulang ulang merupakan tanda infeksi aktif di paru-paru, yang mungkin bisa disebabkan karena COVID-19.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">3</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      3. Sakit Tenggorokan
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Infeksi COVID-19 akan melalui jalur pernafasan sehingga dapat mengakibatkan radang pada tenggorokan dan rasa nyeri.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">4</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      4. Sakit Kepala
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Dengan adanya demam yang tinggi, COVID-19 seringkali diikuti dengan gejala sakit kepala.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">5</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      5. Lemas
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Infeksi COVID-19 yang telah menyebar ke seluruh tubuh akan menghabiskan energi yang banyak sehingga seringkali dapat mengakibatkan lemas.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="item relative">
+                  <div class="owl-slider-2-item last-para-no-margin ml-40 pr-40 pr-md-30 ml-sm-0 pr-sm-0">
+                    <div class="owl-slider-2-number">6</div>
+                    <h6 class="heading-medium text-white mb-20 mt-0 fw700">
+                      6. Sesak Nafas
+                    </h6>
+                    <p class="heading-small text-gray">
+                      Apabila COVID-19 berkembang dengan cepat dan besar di paru-paru, fungsi paru akan menurun sehingga terjadi sesak nafas.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <!-- END SLIDER -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CLIENTS SECTION -->
+    <section class="page-section brands pt-20 pb-100">
+      <!-- Work hero section -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+          <div class="hero-section pt-70">
+            <h6 class="heading-big-subhead text-black fw700 mb-20 mb-sm-20">
+              Berkolaborasi Bersama Cegah Covid19!
+            </h6>
+            <p>
+              Kamu juga bisa membantu menumbuhkan optimisme dan gotong royong untuk melawan COVID-19 ini kepada keluarga, pasangan, sahabat, dan temanmu dengan membagikan kanal informasi ini
+            </p>
+          </div>
+          <!-- <small>Disini Nantinya Logo Logo Kolaborator</small> -->
+        </div>
+      </div>
+
+      <!-- <div class="container-fluid">
+        <div id="brands-slider">
+          <div class="item">
+            <img src="images/clients/client-logo-1.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-2.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-3.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-4.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-5.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-6.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-7.png" alt="c1" title="clients" />
+          </div>
+          <div class="item">
+            <img src="images/clients/client-logo-3.png" alt="c1" title="clients" />
+          </div>
+        </div>
+      </div> -->
+
+    </section>
+  </section>
+
+  <!-- CONTACT-->
+  <section data-inpage-section="true" id="contact">
+    <section class="page-section bg-color overlay-color-90 pt-140 pt-sm-100 pb-140 pb-sm-100" data-background="images/image_6.jpg">
+      <div class="container">
+
+        <!-- CONTACT INTRO -->
+        <div class="row">
+          <div class="page-section pb-100 pb-sm-80">
+            <div class="col-md-6 col-xs-8">
+              <h2 class="heading-big fw700 text-white mb-30 mb-sm-20">
+                Mari Berhubungan <span class="newline">Bersama</span>
+              </h2>
+              <h3 class="heading-big-subhead fw400 text-gray pt-20">
+                Petenang Mad ! <br> #BangkalanSehat #DirumahSaja #LawanBersama #BangkalanCegahCorona
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT DETAIL -->
+        <div class="hero-section bg-white last-para-no-margin pt-70 pb-70 pl-50 pr-50 pl-sm-30 pr-sm-30">
+          <div class="row equalize sm-equalize-auto alt-contact-box">
+            <div class="col-sm-4 mb-sm-30 mt-70">
+              <div class="contact-no">
+                <h4 class="heading-medium  mb-10 fw700">Kontak Kami</h4>
+                <p class=" heading-small mb-0">
+                  <a href="https://api.whatsapp.com/send?phone=6281946337780&text=hai" target="_blank">Hubungi Mad-Covid</a><br />
+
+
+                  <a href="mailto:hello@Cedia.co.in">Email: bangkalancovid19@gmail.com</a><br />
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-4 mb-sm-30 mt-70 ">
+              <div class="contact-address">
+                <h4 class="heading-medium  mb-10 fw600">Alamat</h4>
+                <p class=" heading-small">
+                  Dirumah Saja, Jaga Diri Saling Jaga, Tetap Sehat.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-4 mt-70">
+              <div class="contact-social text-center">
+                <h4 class="heading-medium  mb-10 fw600">Kanal Lain</h4>
+                <!-- SOCIAL ICON LINK -->
+                <ol>
+                  <li>
+                    <a href="#" title="Twitter" target="_blank">
+                      <i class="icon-096"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Facebook" target="_blank">
+                      <i class="icon-093"></i>
+                    </a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+      </div>
+    </section>
+  </section>
+
   <!-- FOOTER-->
   <footer class="page-section footer pt-100 pb-100 pt-sm-70 pb-sm-70">
     <div class="container">
@@ -210,6 +604,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.easing.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/DataTables/datatables.min.js"></script>
   <script src="js/viewport.js"></script>
   <script src="js/equalize.min.js"></script>
   <script src="js/slick.min.js"></script>
@@ -220,9 +615,15 @@
   <script src="js/jquery.fitvids.js"></script>
   <script src="js/canvasjs/canvasjs.min.js"></script>
   <script src="js/script.js"></script>
-
-  <script type="text/javascript">
-  </script>
+  <!-- <script src="js/chart.js"></script> -->
+  <script src="js/data/home.js"></script>
+  <!-- <script type="text/javascript">
+    $(document).ready(function() {
+      $('#example').DataTable( {
+          // "ajax": 'https://madcovid-webhook.herokuapp.com/data'
+      } );
+    } );
+  </script> -->
 
 </body>
 

@@ -33,6 +33,7 @@
   <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/style2.css" />
   <link rel="stylesheet" href="css/map-css/style.css">
+  <link rel="stylesheet" type="text/css" media="all" href="js/DataTables/datatables.min.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/padding-margin.css" />
 </head>
@@ -116,7 +117,7 @@
                 Peta Data
               </h4>
               <p class="heading-big-subhead fw400 pt-20">
-                Data dan informasi yang ditampilkan di sini merupakan agregasi dari berbagai data yang diambil dari sumber-sumber pemerintah, LSM kesehatan dan media yang telah diterbitkan, baik di Indonesia maupun di luar Indonesia. Semua data dan gambar yg ditampilkan di situs ini akan memuat sumber yang digunakan sebagai referensi
+                Data dan informasi yang ditampilkan di sini merupakan agregasi dari berbagai data yang diambil dari sumber-sumber pemerintah, LSM kesehatan dan media yang telah diterbitkan. <br>Semua data dan gambar yg ditampilkan di situs ini akan memuat sumber yang digunakan sebagai referensi
               </p>
             </div>
           </div>
@@ -130,6 +131,9 @@
           <div class="col-md-12 mb-30 mb-sm-30">
             <h2 class="heading-hero fw700 text-color mb-30 mb-sm-20">Pesebaran Covid19 Bangkalan</span>
             </h2>
+            <br>Pada grafik ini kami tidak menyertakan status ODR, karena bagi kami setiap orang berada dalam resiko selama wabah ini berlangsung.
+            <br>Untuk Mengetahui Penjelasan Tentang Status Pasien Cek <a href="infografik_page/statuspasien.html"> Status Pasien Covid19 </a>
+            <br>
             <p class="heading-medium fw400 pt-20">
               Data Diupdate Pada : <span id="dateUpdate" class="label label-danger"></span>
             </p>
@@ -142,6 +146,7 @@
           </div>
           <div class="col-md-3 col-sm-12">
             <div class="display-block relative">
+              <strong class="fw700 text-black">Data Saat Ini </strong><br>
               <ul class="project-detail-content-list">
                 <!-- <a href="#" class="btn btns-block btn-color">Data Sebaran</a> -->
                 <li>
@@ -162,11 +167,26 @@
                     <strong id="positif" class="heading-medium fw700 text-positif"></strong>
                   </div>
                 </li>
+                <li>
+                  <strong class="fw700 text-black">SEMBUH</strong>
+                  <div class="">
+                    <strong id="sembuh" class="heading-medium fw700 text-sembuh"></strong>
+                  </div>
+                </li>
+                <li>
+                  <strong class="fw700 text-black">MENINGGAL</strong>
+                  <div class="">
+                    <strong id="meninggal" class="heading-medium fw700 text-meninggal"></strong>
+                  </div>
+                </li>
               </ul>
+              <div class="">
+                <br>
+                <strong class="fw700 text-black">Info :</strong><br>
+                <span class="pt-10">1 PDP Negatif Corona Meninggal Dunia, PDP Asal Klampis</span>
+              </div>
             </div>
-            <div class="">
-              <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-            </div>
+
           </div>
 
         </div>
@@ -184,9 +204,7 @@
           </div>
         </div>
         <small><a id="sumber2" href="#" > Sumber Referensi Data </a> </small>
-        <br>Pada grafik ini kami tidak menyertakan status ODR, karena bagi kami setiap orang berada dalam resiko selama wabah ini berlangsung.
-        <br>Untuk Mengetahui Penjelasan Tentang Status Pasien Cek <a href="infografik_page/statuspasien.html"> Status Pasien Covid19 </a>
-        <br>
+
         <hr>
         <div class="row mb-30 mb-sm-30">
           <div class="col-md-12 col-sm-12 mb-10 mb-sm-10">
@@ -199,14 +217,150 @@
             </p>
           </div>
           <div class="col-md-12 col-sm-12">
-            <div class="panel panel-danger">
-              <!-- Default panel contents -->
-              <div class="panel-heading">Tabel Data Pesebaran Covid19</div>
-              <!-- Table -->
-              <div id="tabeldata" class="tableFixHead">
-              </div>
+            <div id="tabeldata" class="table-responsive">
+
             </div>
             <small><a id="sumber3" href="#" > Sumber Referensi Data </a> </small>
+          </div>
+        </div>
+
+        <hr>
+        <div class="row pt-30 pt-sm-10 mb-30 mb-sm-30">
+          <div class="col-md-12 col-sm-12 mb-10 mb-sm-10">
+            <h2 class="heading-hero fw700 text-color">Tabel Data Pasien PDP & Positif</h2>
+            <div class="">
+            Untuk Mengetahui Penjelasan Tentang Status Pasien Cek <a href="infografik_page/statuspasien.html"> Status Pasien Covid19 </a>
+            </div>
+            <p class="heading-medium fw400 pt-20">
+              Data Diupdate Pada : <span id="dateUpdate3" class="label label-danger"></span>
+            </p>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="panel panel-warning">
+              <div class="panel-heading">Tabel Data Pasien PDP</div>
+              <div class="panel-body">
+                Data Yang Berhasil Mad-Covid Dapatkan Sejauh Ini :
+              </div>
+              <div class="tableFixHead">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <th>No</th>
+                    <th>Gender</th>
+                    <th>Umur</th>
+                    <th>Kelurahan</th>
+                    <th>Kecamatan</th>
+                    <th>Status</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>L</td>
+                      <td>52 Tahun</td>
+                      <td>Belum Diketahui</td>
+                      <td>Klampis</td>
+                      <td><span class="label label-danger"> Meninggal </span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="panel panel-danger">
+              <div class="panel-heading">Tabel Data Pasien Terkonfirmasi Positif</div>
+              <div class="panel-body">
+                Data Yang Berhasil Mad-Covid Dapatkan Sejauh Ini :
+              </div>
+              <div class="tableFixHead">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <th>No</th>
+                    <th>Gender</th>
+                    <th>Umur</th>
+                    <th>Kelurahan</th>
+                    <th>Kecamatan</th>
+                    <th>Status</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>L</td>
+                      <td>32 Tahun</td>
+                      <td>Pangeran Gedungan</td>
+                      <td>Blega</td>
+                      <td><span class="label label-success"> Sembuh </span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>L</td>
+                      <td>56 Tahun</td>
+                      <td>Mlajah</td>
+                      <td>Bangkalan</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>L</td>
+                      <td>Belum Diketahui</td>
+                      <td>Klampis Barat</td>
+                      <td>Klampis</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>W</td>
+                      <td>Belum Diketahui</td>
+                      <td>Klampis Timur</td>
+                      <td>Klampis</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Belum Diketahui</td>
+                      <td>Kamal</td>
+                      <td><span class="label label-warning"> Dirawat </span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="panel-body">
+                <small><a href="#" > Sumber : Radar Covid 19 Pemprov </a> </small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -324,6 +478,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.easing.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/DataTables/datatables.min.js"></script>
   <script src="js/viewport.js"></script>
   <script src="js/equalize.min.js"></script>
   <script src="js/slick.min.js"></script>

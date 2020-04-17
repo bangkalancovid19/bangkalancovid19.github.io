@@ -4,26 +4,30 @@ fetch("https://madcovid-webhook.herokuapp.com/data")
     document.getElementById("dateUpdate").innerHTML = data.lastupdate;
     document.getElementById("dateUpdate1").innerHTML = data.lastupdate;
     document.getElementById("dateUpdate2").innerHTML = data.lastupdate;
+    document.getElementById("dateUpdate3").innerHTML = data.lastupdate;
     // document.getElementById("sumber1").href = "https://"+data.resource;
     // document.getElementById("sumber2").href = "https://"+data.resource;
     // document.getElementById("sumber3").href = "https://"+data.resource;
-    document.getElementById("sumber1").innerHTML = data.resource;
-    document.getElementById("sumber2").innerHTML = data.resource;
-    document.getElementById("sumber3").innerHTML = data.resource;
+    document.getElementById("sumber1").innerHTML = "Sumber : "+data.resource;
+    document.getElementById("sumber2").innerHTML = "Sumber : "+data.resource;
+    document.getElementById("sumber3").innerHTML = "Sumber : "+data.resource;
 
     setTableData(data);
-    setChart(data.total);
+    // setChart(data.total);
     setBarChart(data);
   });
 
 function setTableData(data) {
   var kec = Object.keys(data.kecamatan);
   document.getElementById("odp").innerHTML = data.total.odp+" Orang";
-  document.getElementById("pdp").innerHTML = +data.total.pdp+" Orang";
+  document.getElementById("pdp").innerHTML = data.total.pdp+" Orang";
   document.getElementById("positif").innerHTML = data.total.positif+" Orang";
+  document.getElementById("sembuh").innerHTML = data.total.sembuh+" Orang";
+  document.getElementById("meninggal").innerHTML = +data.total.meninggal+" Orang";
 
   var table = document.createElement('table');
-  table.setAttribute('class', 'table table-hover');
+  table.setAttribute('class', 'table table-sm table-striped table-bordered');
+  table.setAttribute('id', 'example');
 
   var tableHeader = document.createElement("thead");
   table.appendChild(tableHeader);
@@ -37,13 +41,12 @@ function setTableData(data) {
     tableHeaderRow.appendChild(tableHeader);
     tableHeader.innerHTML = headers[i];
   }
-
   var tableBody = document.createElement("tbody");
   table.appendChild(tableBody);
 
   for( var i = 0; i < Object.keys(data.kecamatan).length; i++ ) {
     var child = data.kecamatan[Object.keys(data.kecamatan)[i]];
-    var row = tableBody.insertRow();
+    var row = tableBody.insertRow()
     row.insertCell().appendChild(document.createTextNode(kec[i].replace("_"," ").toUpperCase()));
     row.insertCell().appendChild(document.createTextNode(child.odp));
     row.insertCell().appendChild(document.createTextNode(child.pdp));
@@ -53,6 +56,9 @@ function setTableData(data) {
   }
 
   document.getElementById('tabeldata').appendChild(table);
+  $('#example').DataTable( {
+
+  });
 }
 
 function setChart(data) {
