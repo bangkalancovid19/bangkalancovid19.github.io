@@ -187,14 +187,14 @@ function setMap(datax) {
                       content:"Modung",
                   }
               },
-              "sepuluh": {
+              "sepulu": {
                   value: "2617939",
                   href: "#",
                   tooltip: {
-                      content: popover("sepuluh")
+                      content: popover("sepulu")
                   },
                   text :{
-                      content:"Sepuluh",
+                      content:"Sepulu",
                   }
               },
               "socah": {

@@ -11,7 +11,6 @@ fetch("https://madcovid-webhook.herokuapp.com/data")
     document.getElementById("sumber2").innerHTML = data.resource;
     document.getElementById("sumber3").innerHTML = data.resource;
 
-    // console.log(data.kecamatan.arosbaya.odp);
     setTableData(data);
     setChart(data.total);
     setBarChart(data);
@@ -150,7 +149,7 @@ function setBarChart(data) {
         { label: "Kwanyar", y: parseInt(kec.kwanyar.odp) },
         { label: "Labang", y: parseInt(kec.labang.odp) },
         { label: "Modung", y: parseInt(kec.modung.odp) },
-        { label: "Sepulu", y: parseInt(kec.sepuluh.odp) },
+        { label: "Sepulu", y: parseInt(kec.sepulu.odp) },
         { label: "Socah", y: parseInt(kec.socah.odp) },
         { label: "Tanah Merah", y: parseInt(kec.tanah_merah.odp) },
         { label: "Tanjung Bumi", y: parseInt(kec.tanjung_bumi.odp) },
@@ -175,7 +174,7 @@ function setBarChart(data) {
         { label: "Kwanyar", y: parseInt(kec.kwanyar.pdp) },
   			{ label: "Labang", y: parseInt(kec.labang.pdp) },
   			{ label: "Modung", y: parseInt(kec.modung.pdp) },
-  			{ label: "Sepulu", y: parseInt(kec.sepuluh.pdp) },
+  			{ label: "Sepulu", y: parseInt(kec.sepulu.pdp) },
         { label: "Socah", y: parseInt(kec.socah.pdp) },
         { label: "Tanah Merah", y: parseInt(kec.tanah_merah.pdp) },
   			{ label: "Tanjung Bumi", y: parseInt(kec.tanjung_bumi.pdp) },
@@ -200,7 +199,7 @@ function setBarChart(data) {
         { label: "Kwanyar", y: parseInt(kec.kwanyar.positif) },
   			{ label: "Labang", y: parseInt(kec.labang.positif) },
   			{ label: "Modung", y: parseInt(kec.modung.positif) },
-  			{ label: "Sepulu", y: parseInt(kec.sepuluh.positif) },
+  			{ label: "Sepulu", y: parseInt(kec.sepulu.positif) },
         { label: "Socah", y: parseInt(kec.socah.positif) },
         { label: "Tanah Merah", y: parseInt(kec.tanah_merah.positif) },
   			{ label: "Tanjung Bumi", y: parseInt(kec.tanjung_bumi.positif) },
