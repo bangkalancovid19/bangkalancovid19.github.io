@@ -35,6 +35,7 @@
   <link rel="stylesheet" type="text/css" media="all" href="css/style2.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css" />
   <link rel="stylesheet" type="text/css" media="all" href="css/padding-margin.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="js/DataTables/datatables.min.css" />
 </head>
 
 <body>
@@ -190,39 +191,6 @@
           <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
             <div class="hero-section pt-70">
               <h6 class="heading-big-subhead text-black fw700 mb-20 mb-sm-20">
-                Data Pesebaran Covid19 Wilayah Bangkalan
-              </h6>
-            </div>
-            Data Diupdate Pada : <span id="dateUpdate" class="label label-danger"></span>
-          </div>
-        </div>
-
-        <div class="row pt-50">
-          <div class="col-md-7">
-            <div class="panel panel-info">
-              <!-- Default panel contents -->
-              <div class="panel-heading">Tabel Data Pesebaran Covid 19 Bangkalan</div>
-              <div class="panel-body">
-                  <span id="odp" class="label label-info"></span>
-                  <span id="pdp" class="label label-warning"></span>
-                  <span id="positif" class="label label-danger"></span>
-                  <span id="sembuh" class="label label-success"></span>
-                  <span id="meninggal" class="label label-default"></span>
-              </div>
-              <div id="tabeldata" class="tableFixHead">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-          </div>
-        </div>
-        <small><a id="sumber" href="#" > Sumber Referensi Data </a> </small>
-        <!-- Work hero section -->
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
-            <div class="hero-section pt-70">
-              <h6 class="heading-big-subhead text-black fw700 mb-20 mb-sm-20">
                 Dapatkan Live Update Dengan Mad-Covid!
               </h6>
               <p>
@@ -232,7 +200,128 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+            <div class="hero-section pt-70">
+              <h6 class="heading-big-subhead text-black fw700 mb-10 mb-sm-10">
+                Data Pesebaran Covid19 Wilayah Bangkalan
+              </h6>
+            </div>
+            Data Diupdate Pada : <span id="dateUpdate" class="label label-danger"></span>
+          </div>
+        </div>
+
+        <div class="row pt-50">
+          <div class="col-md-12">
+            <div class="panel-heading">Tabel Data Pesebaran Covid 19 Bangkalan</div>
+            <div class="panel-body mb-10">
+                <span id="odp" class="label label-info"></span>
+                <span id="pdp" class="label label-warning"></span>
+                <span id="positif" class="label label-danger"></span>
+                <span id="sembuh" class="label label-success"></span>
+                <span id="meninggal" class="label label-default"></span>
+            </div>
+            <div id="tabeldata" class="table-responsive">
+
+            </div>
+
+          </div>
+        </div>
+        <div class="row pt-20">
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-info">
+              <!-- Default panel contents -->
+              <div class="panel-heading">ODP (Orang Dalam Pemantauan)</div>
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">Jumlah Total <span id="odptotal" class="label label-primary" style="float: right;"></span></li>
+                <li class="list-group-item">Dalam Pemantauan <span id="odpproses" class="label label-warning" style="float: right;"></span></li>
+                <li class="list-group-item">Selesai Pemantauan <span id="odpselesai" class="label label-success" style="float: right;"></span></li>
+                <li class="list-group-item">Meninggal <span class="label label-danger" style="float: right;"> 0 Orang</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-warning">
+              <!-- Default panel contents -->
+              <div class="panel-heading">PDP (Pasien Dalam Pengawasan)</div>
+
+              <!-- List group -->
+              <ul class="list-group">
+                <li class="list-group-item">Jumlah Total <span id="pdptotal" class="label label-primary" style="float: right;"></span></li>
+                <li class="list-group-item">Dalam Pengawasan <span id="pdpproses" class="label label-warning" style="float: right;"></span></li>
+                <li class="list-group-item">Selesai Pengawasan <span id="pdppselesai" class="label label-success" style="float: right;"></span></li>
+                <li class="list-group-item">Meninggal <span id="pdpmeninggal" class="label label-danger" style="float: right;"></span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12">
+            <div class="panel panel-danger">
+              <!-- Default panel contents -->
+              <div class="panel-heading">TERKONFIRMASI POSITIF</div>
+              <li class="list-group-item">Jumlah Total <span id="positiftotal" class="label label-primary" style="float: right;"></span></li>
+              <li class="list-group-item">Dalam Perawatan <span id="positifproses" class="label label-warning" style="float: right;"></span></li>
+              <li class="list-group-item">Sembuh <span id="positifpselesai" class="label label-success" style="float: right;"></span></li>
+              <li class="list-group-item">Meninggal <span id="positifmeninggal" class="label label-danger" style="float: right;"></span></li>
+
+              </ul>
+            </div>
+          </div>
       </div>
+      <small><a href="petadata.html" > Lihat Data Lebih Detail Disini </a> </small><br>
+      <small><a id="sumber" href="#" > Sumber Referensi Data </a> </small>
+        <!-- Work hero section -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
+          <div class="hero-section pt-70">
+            <h6 class="heading-big-subhead text-black fw700 mb-10 mb-sm-10">
+              RSUD Syarifah Ambami Rato Ebu Bangkalan
+            </h6>
+            <h6 class="heading-small text-black fw100 mb-10 mb-sm-10">
+              Fasilitas Kesehatan Yang Menjadi Rujukan Untuk Pasien Covid19 Bangkalan
+              Dan Jumlah Tenaga Medis Yang Tersedia
+            </h6>
+          </div>
+          Data Diupdate Pada : <span id="" class="label label-danger"> Waktu Tidak Valid</span>
+        </div>
+      </div>
+      <div class="row pt-50">
+        <div class="col-xs-12 col-md-3">
+          <a class="thumbnail">
+            <img src="images/syamrabu.jpg" alt="...">
+          </a><br>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Informasi Faskes</h3>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">RSUD Syamrabu Bangkalan</li>
+              <li class="list-group-item">Alamat : Jalan Pemuda Kaffa No 9 Burneh - Bangkalan</li>
+              <li class="list-group-item">Call Center : 031-3095088</li>
+              <li class="list-group-item">Web : rsabangkalan.com</li>
+            </ul>
+            <!-- <div class="panel-footer"></div> -->
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Informasi Ruangan Faskes</h3>
+            </div>
+              <ul>
+                <li class="list-group-item">Isolasi Ventilator<span class="label label-success" style="float: right;">1 Tersedia</span>  <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Isolasi Non - Ventilator<span  class="label label-success" style="float: right;">10 Tersedia</span>  <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Isolasi Biasa: (0/0) <span class="label label-success" style="float: right;">0 Tersedia </span> <span class="label label-danger" style="margin-right: 4px; float: right;">0 Terpakai</span></li>
+                <li class="list-group-item">Jumlah Tenaga Medis : <span class="label label-success" style="float: right;">Belum Diketahui</span></li>
+              </ul>
+            <div class="panel-footer"> <a > *Data Belum Sepenuhnya Terintegrasi </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
     </section>
 
 
@@ -515,6 +604,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery.easing.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/DataTables/datatables.min.js"></script>
   <script src="js/viewport.js"></script>
   <script src="js/equalize.min.js"></script>
   <script src="js/slick.min.js"></script>
@@ -527,12 +617,13 @@
   <script src="js/script.js"></script>
   <!-- <script src="js/chart.js"></script> -->
   <script src="js/data/home.js"></script>
-
-  <script type="text/javascript">
-  $(window).on("load",function(){
-    // $('#myModal').modal('show');
-  })
-  </script>
+  <!-- <script type="text/javascript">
+    $(document).ready(function() {
+      $('#example').DataTable( {
+          // "ajax": 'https://madcovid-webhook.herokuapp.com/data'
+      } );
+    } );
+  </script> -->
 
 </body>
 
