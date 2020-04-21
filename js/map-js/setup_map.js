@@ -117,6 +117,9 @@ function setMap(datax) {
               "kamal": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                      fill: "#d9534f"
+                  },
                   tooltip: {
                       content: popover("kamal")
                   },
