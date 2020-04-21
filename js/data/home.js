@@ -1,4 +1,4 @@
-fetch("https://madcovid-webhook.herokuapp.com/data")
+fetch("https://bot.mad-covid.com/data")
   .then((resp) => resp.json())
   .then(function(data) {
     document.getElementById("dateUpdate").innerHTML = data.lastupdate;
