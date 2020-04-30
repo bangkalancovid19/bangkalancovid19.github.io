@@ -51,6 +51,9 @@ function setMap(datax) {
               "arosbaya": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: "#d9534f"
+                  },
                   tooltip: {
                       content: popover("arosbaya")
                   },
