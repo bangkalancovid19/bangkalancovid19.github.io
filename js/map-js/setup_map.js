@@ -52,7 +52,7 @@ function setMap(datax) {
                   value: "2617939",
                   href: "#",
                   attrs: {
-                    fill: "#d9534f"
+                    fill: fillColor('arosbaya')
                   },
                   tooltip: {
                       content: popover("arosbaya")
@@ -65,7 +65,7 @@ function setMap(datax) {
                   value: "2617939",
                   href: "#",
                   attrs: {
-                      fill: "#d9534f"
+                      fill: fillColor('bangkalan')
                   },
                   tooltip: {
                       content: popover("bangkalan")
@@ -78,7 +78,7 @@ function setMap(datax) {
                   value: "2617939",
                   href: "#",
                   attrs: {
-                      fill: "#d9534f"
+                      fill: fillColor('blega')
                   },
                   tooltip: {
                       content: popover("blega")
@@ -90,6 +90,9 @@ function setMap(datax) {
               "burneh": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor('burneh')
+                  },
                   tooltip: {
                       content: popover("burneh")
                   },
@@ -100,6 +103,9 @@ function setMap(datax) {
               "galis": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor('galis')
+                  },
                   tooltip: {
                       content: popover("galis")
                   },
@@ -110,6 +116,9 @@ function setMap(datax) {
               "geger": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor('geger')
+                  },
                   tooltip: {
                       content: popover("geger")
                   },
@@ -121,7 +130,7 @@ function setMap(datax) {
                   value: "2617939",
                   href: "#",
                   attrs: {
-                      fill: "#d9534f"
+                      fill: fillColor("kamal")
                   },
                   tooltip: {
                       content: popover("kamal")
@@ -134,7 +143,7 @@ function setMap(datax) {
                   value: "2617939",
                   href: "#",
                   attrs: {
-                      fill: "#d9534f"
+                    fill: fillColor('klampis')
                   },
                   tooltip: {
                       content: popover("klampis")
@@ -146,6 +155,9 @@ function setMap(datax) {
               "kokop": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("kokop")
+                  },
                   tooltip: {
                       content: popover("kokop")
                   },
@@ -156,6 +168,9 @@ function setMap(datax) {
               "konang": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("konang")
+                  },
                   tooltip: {
                       content: popover("konang")
                   },
@@ -166,6 +181,9 @@ function setMap(datax) {
               "kwanyar": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("kwanyar")
+                  },
                   tooltip: {
                       content: popover("kwanyar")
                   },
@@ -176,6 +194,9 @@ function setMap(datax) {
               "labang": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("labang")
+                  },
                   tooltip: {
                       content: popover("labang")
                   },
@@ -186,6 +207,9 @@ function setMap(datax) {
               "modung": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("modung")
+                  },
                   tooltip: {
                       content: popover("modung")
                   },
@@ -196,6 +220,9 @@ function setMap(datax) {
               "sepulu": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("sepulu")
+                  },
                   tooltip: {
                       content: popover("sepulu")
                   },
@@ -206,6 +233,9 @@ function setMap(datax) {
               "socah": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("socah")
+                  },
                   tooltip: {
                       content: popover("socah")
                   },
@@ -216,6 +246,9 @@ function setMap(datax) {
               "tanah_merah": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("tanah_merah")
+                  },
                   tooltip: {
                       content: popover("tanah_merah")
                   },
@@ -229,6 +262,9 @@ function setMap(datax) {
               "tanjung_bumi": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("tanjung_bumi")
+                  },
                   tooltip: {
                       content: popover("tanjung_bumi")
                   },
@@ -239,6 +275,9 @@ function setMap(datax) {
               "tragah": {
                   value: "2617939",
                   href: "#",
+                  attrs: {
+                    fill: fillColor("tragah")
+                  },
                   tooltip: {
                       content: popover("tragah")
                   },
@@ -262,5 +301,12 @@ function popover(name) {
             <div class="odp"> <span class="icon"></span> ODP : '+data.kecamatan[name]['odp']+' </div>\
             <div class="pdp"> <span class="icon"></span> PDP : '+data.kecamatan[name]['pdp']+' </div>\
             <div class="positif"> <span class="icon"></span> POSITIF : '+data.kecamatan[name]['positif']+' </div>';
+
+};
+
+function fillColor(name) {
+    color = data.kecamatan[name]['positif'] > 0 ? "#d9534f" : "#f8f2e2"
+    
+    return color
 
 };
